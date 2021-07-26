@@ -17,13 +17,13 @@ const author = document.querySelector("[data-author]");
 const logo = document.querySelector("[data-logo]");
 
 logo.addEventListener('click', () => {
-    if (window.scrollY != 0) {
+    if (window.scrollY !== 0) {
         window.scrollTo(0, 0)
     } else return
 })
 
 home.addEventListener('click', () => {
-    if (window.scrollY != 0) {
+    if (window.scrollY !== 0) {
         window.scrollTo(0, 0)
     } else return
     
@@ -31,13 +31,15 @@ home.addEventListener('click', () => {
 
 
 info.addEventListener('click', () => {
-    if (window.scrollY != 899) {
-        window.scrollTo(0, 899)
-    } else return
+    if (window.innerWidth == 1024) {
+        window.scrollTo(0, 1070)
+    } else {
+        window.scrollTo(0, 900)
+    }
 })
 
 review.addEventListener('click', () => {
-    if (window.scrollY != 1760) {
+    if (window.scrollY !== 1760) {
         window.scrollTo(0, 1760)
     } else return
 })
