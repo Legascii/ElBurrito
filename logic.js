@@ -32,7 +32,7 @@ home.addEventListener('click', () => {
 
 info.addEventListener('click', () => {
     if (window.scrollY != 899) {
-        window.scrollTo(0, 887)
+        window.scrollTo(0, 899)
     } else return
 })
 
