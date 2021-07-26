@@ -1,12 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 :root {
     --font-family: 'Poppins', arial;
     --primary-color-1: #facd03;
     --primary-color-2: #f7e860;
     --primary-color-3: #15181b;
     scroll-behavior: smooth;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 body {
@@ -32,11 +40,13 @@ nav {
     background-color: #1f1f1f;
     height: 200vh;
     padding: 1em;
-    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: all 1s ease-in-out ;
+    -o-transition: all 1s ease-in-out ;
     transition: all 1s ease-in-out ;
 }
-
-
 
 ul {
     list-style-type: none;
@@ -52,7 +62,9 @@ section {
 }
 
 nav.menu-btn {
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
 }
 
 .navbar-navigation {
@@ -77,7 +89,8 @@ nav.menu-btn {
 .navbar {
     background-color: #ffffff;
     padding: 1em;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.10);
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.10);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.10);
     position: fixed;
     top: 0;
     width: 100%;
@@ -85,9 +98,13 @@ nav.menu-btn {
 }
 
 .nav-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     place-content: space-between;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .mobile-menu-exit {
@@ -118,6 +135,9 @@ nav.menu-btn {
     margin-right: 1.8em;
 }
 
+.item:hover {
+    background-color: rgba(0, 0, 0, 0.10);
+}
 
 @media only screen and (min-width: 620px) {
     
@@ -126,18 +146,28 @@ nav.menu-btn {
     }
 
     .navbar .container {
+        display: -ms-grid;
         display: grid;
+        -ms-grid-columns: 180px auto;
         grid-template-columns: 180px auto;
         
     }
 
     nav {
+        -webkit-transition: none;
+        -o-transition: none;
         transition: none;
     }
 
     .navbar nav {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
         transform: translateX(0);
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between;
         background: none;
         position: unset;
@@ -147,9 +177,13 @@ nav.menu-btn {
     }
     
     .navbar-navigation {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         place-content: flex-end;
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         width: 100%;
         margin: 0 2em 0 0 ;
 
@@ -180,11 +214,18 @@ nav.menu-btn {
 }
 
 .hero .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     text-align: center;
-    margin: 2em 2em 0 2em;
+    margin: 2em 0em 0 0em;
     height: 100%;
 
 }
@@ -205,12 +246,14 @@ nav.menu-btn {
 .hero .hero-image {
     width: 17em;
     height: 14em;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.45);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.45);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.45);
 }
 
 .hero .pointer {
     margin-bottom: 5em;
-    animation: Point 1.5s infinite ease-in-out;
+    -webkit-animation: Point 1.5s infinite ease-in-out;
+            animation: Point 1.5s infinite ease-in-out;
     width: 10em;
     height: 10em;
 }
@@ -221,23 +264,56 @@ nav.menu-btn {
     }
 }
 
-@keyframes Point {
+@-webkit-keyframes Point {
     0% {
-        transform: translateY(0);
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
     }
     50% {
-        transform: translateY(10%);
+        -webkit-transform: translateY(10%);
+                transform: translateY(10%);
     }
     100% {
-        transform: translateY(0);
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+}
+
+@keyframes Point {
+    0% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(10%);
+                transform: translateY(10%);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
     }
 }
 
 .blinker {
     color: black;
-    animation: blink 0.7s infinite;
+    -webkit-animation: blink 0.7s infinite;
+            animation: blink 0.7s infinite;
     height: .5em;
     font-size: 1.2em;
+}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 @keyframes blink {
@@ -272,10 +348,22 @@ nav.menu-btn {
    .hero .container {
        margin-right: 0;
        margin-left: 0;
+       display: -webkit-box;
+       display: -ms-flexbox;
        display: flex;
-       flex-direction: row;
-       justify-content: space-around;
+       -webkit-box-orient: horizontal;
+       -webkit-box-direction: normal;
+           -ms-flex-direction: row;
+               flex-direction: row;
+       -ms-flex-pack: distribute;
+           justify-content: space-around;
        text-align: left;
+   }
+
+   .hero .pointer {
+       padding-top: 4em;
+       width: 10rem;
+       height: 10rem;
    }
 
    .hero .hero-image {
@@ -284,14 +372,15 @@ nav.menu-btn {
    }
 
     .hero .pointer {
-        padding-top: 4em;
-        width: 15rem;
-        height: 15rem;
+    width: 20rem;
+    height: 20rem;
     }
 }
 /* FESTIVAL SECTION STYLE */
 
 .festival-section {
+    background: -webkit-gradient(linear, left top, right bottom, from(#20272E), to(#15181b));
+    background: -o-linear-gradient(top left, #20272E, #15181b);
     background: linear-gradient(to bottom right, #20272E, #15181b);
     color: white;
     height: 55em;
@@ -301,15 +390,26 @@ nav.menu-btn {
 
 .festival-section .container {
     height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 
 .festival-section .container {
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .info-title {
@@ -346,6 +446,7 @@ nav.menu-btn {
     margin-bottom: 2em;
 }
 
+
 .image-display-section li {
     background-color: #F2F2F2;
     text-align: center;
@@ -353,7 +454,8 @@ nav.menu-btn {
     width: 40vw;
     margin: 0 auto 5em auto;
     border-radius: 20px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
 }
 
 .image-display-section blockquote {
@@ -401,9 +503,18 @@ nav.menu-btn {
 }
 
 .author-section .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     height: 100%;
 }
@@ -445,6 +556,8 @@ nav.menu-btn {
     }
 
     .image-display-section .container ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
     }
     .image-display-section .container ul li{
