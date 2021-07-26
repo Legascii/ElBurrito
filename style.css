@@ -278,20 +278,15 @@ nav.menu-btn {
        text-align: left;
    }
 
-   .hero .pointer {
-       padding-top: 4em;
-       width: 10rem;
-       height: 10rem;
-   }
-
    .hero .hero-image {
        width: 25rem;
        height: 20em;
    }
 
     .hero .pointer {
-    width: 20rem;
-    height: 20rem;
+        padding-top: 4em;
+        width: 15rem;
+        height: 15rem;
     }
 }
 /* FESTIVAL SECTION STYLE */
